@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+header{
+    text-align: center;
+    background-color: rgb(81, 88, 14);
+    padding: 30px;
+}
+.navbar{
+    background-color: rgb(189, 250, 21);
+    height: 25px;
+}
+aside{
+    width: 30%;
+    float: left;
+    padding: 10px;
+}
+aside:hover{
+    color: darkorchid;
+}
+section{
+    width: 30%;
+    float: left;
+    padding: 10px;
+}
+section:hover{
+    color: aqua;
+}
+article{
+    width: 40%;
+    float: left;
+    padding: 10px;
+}
+article:hover{
+    color: rgb(167, 35, 90);
+    cursor: pointer;
+}
+footer{
+    display: block;
+    text-align: center;
+    clear: both;
+    background-color: rgb(81, 88, 14);
+    padding: 30px;
+}
+@media screen and (max-width:600px) {
+    aside, section, article{
+        width: 100%;
+    }
+    
+}

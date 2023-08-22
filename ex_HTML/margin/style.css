@@ -1,0 +1,23 @@
+body{
+    margin: 0px;
+}
+.box{
+    border: 5px solid;
+    font-size: 5em;
+    height: 250px;
+    width: 250px;
+    margin: auto;
+}
+#box1{
+    background-color: aqua;
+    margin-top: 50px;
+    border-radius: 50px;
+    margin-right: auto;
+    
+
+}
+#box2{
+    background-color: rgb(165, 33, 55);
+    margin-top: 50px;
+    margin-left: auto;
+}
