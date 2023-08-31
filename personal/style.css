@@ -369,26 +369,115 @@ section{
   opacity: 0;
 
 }
+
+.radian_bars .radian_bar{
+  width: 170px;
+  height: 170px;
+  margin: 15px;
+  position: relative;
+
+}
 .radian_bars{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
-  
-}
-.radian_bars .radian_bar{
-  width: 50%;
-  height: 170px;
-  margin-bottom: 10px;
   position: relative;
+  padding-left: 20px;
 
 }
-.radian_bars .radian_bar svg{
+.radian_bars .radian_bar svg {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+
+
+}
+svg circle{
+  fill: none;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+svg .profess_bar{
+  stroke: rgb(17, 6, 24);
+}
+svg .path{
+  stroke: rgb(246, 250, 12);
+  stroke-dashoffset: 500px;
+  stroke-dasharray: 500px;
+}
+
+.path_1 {
+  animation: prog1 2s linear forwards,
+              glow 1s 2s ease-in-out forwards; ;
+}
+
+.path_2 {
+  animation: prog2 2s linear forwards,
+              glow 1s 2s ease-in-out forwards; ;
+}
+.path_3 {
+  animation: prog3 2s linear forwards,
+              glow 1s 2s ease-in-out forwards; ;
+}
+.path_4 {
+  animation: prog4 2s linear forwards,
+              glow 1s 2s ease-in-out forwards; ;
+}
+
+/* :root {
+  --per :calc( 500 - calc(50 * 5))
+} */
+@keyframes prog1{
+  100% {stroke-dashoffset: 50;}
+}
+
+@keyframes prog2{
+  100% {stroke-dashoffset: 125;}
+}
+
+@keyframes prog3{
+  100% {stroke-dashoffset: 200;}
+}
+
+@keyframes prog4{
+  100% {stroke-dashoffset: 300 ;}
+}
+@keyframes glow{
+  100% {
+    filter: drop-shadow(0 0 3px gold);
+  }
+}
+
+
+.radian_bar .percentage{
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
 }
+
+.radian_bar .text{
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 90%;
+  bottom: -35px;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+  text-shadow: 5px 5px 5px gold;
+}
+
+
+
 @keyframes showText {
   100% {
     opacity: 1;
@@ -401,6 +490,5 @@ section{
   }
   100% {
       /* You need to change the percentage below to match the value in the corresponding <span> */
-    
   }
 }
