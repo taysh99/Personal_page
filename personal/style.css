@@ -62,19 +62,24 @@ body {
   align-items: center;
   padding: 70px 10% 0;
 }
+.introduction{
+  margin-left: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
+}
 .home img {
-  position: relative;
   border: 1px solid gold;
   margin: 5px;
   width: 300px;
-  top: 100px;
-  left: 800px;
+
   border-radius: 50px;
   box-shadow: 10px 10px 20px 10px rgba(216, 238, 14, 0.5);
 }
 .home-content {
   max-width: 600px;
-  position: relative;
+  /* position: relative; */
   top: 200px;
   right: 400px;
   font-size: 30px;
@@ -475,6 +480,210 @@ svg .path{
   opacity: 0;
   text-shadow: 5px 5px 5px gold;
 }
+
+.main-text{
+  padding-top: 130px;
+  margin-top: 200px;
+}
+.main-text h2{
+  font-size: 60px;
+  line-height: 1;
+  text-align: center;
+}
+.main-text h2 span {
+  color: gold;
+}
+.portfolio-content{
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(359px,auto)) ;
+}
+.row{
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.row img{
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s;
+}
+.layer{
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.1),gold);
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0  40px;
+  transition: height 0.5s ;
+}
+
+.layer h5{
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.layer p{
+  color: black;
+  font-size: 0.8rem;
+  line-height: 1.8;
+} 
+.layer i{
+  color: gold;
+  margin-top: 20px;
+  font-size: 20px;
+  background: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+
+.row:hover img{
+  transform: scale(1.1);
+}
+.row:hover .layer{
+  height: 100%;
+}
+.contact{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap:3rem;
+  padding-left: 30px;
+  margin-top: 130px;
+}
+.contact-text h2{
+  font-size: 90px;
+  line-height: 1;
+  text-align: center;
+
+}
+.contact-text span{
+  color: gold;
+}
+.contact-text h4{
+  margin: 15px  0;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-text p{
+  color: rgb(160, 151, 151);
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom:  3rem;
+  
+}
+.contact-list{
+  margin-bottom: 3rem;
+}
+.contact-list li{
+  margin-bottom: 10px;
+  display: block;
+}
+.contact-list li{
+  margin-bottom: 10px;
+  display: block;
+}
+.contact-list i{
+  display: inline-block;
+  color: gold;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all .40s ease;
+}
+.contact-list li a:hover{
+  transform: scale(1.01) translateY(-5px);
+  color: gold;
+}
+.contact-icon i{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background:transparent ;
+  border: 2px solid gold;
+  border-radius: 50% ;
+  font-size: 20px;
+  color: gold;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: .5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--1));
+}
+.contact-icon i:hover{
+  background: gold;
+  color: black;
+  box-shadow: 0 0 20px rebeccapurple;
+}
+
+.contact-form form{
+  position: relative;
+}
+.contact-form form input, form textarea{
+  border: none;
+  outline: none;
+  width: 90%;
+  padding: 18px;
+  background-color: rgba(230, 208, 208, 0.384);
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+
+}
+.contact-form textarea{
+  resize: none;
+  height: 220px;
+}
+.contact-form form .send{
+  display: inline-block;
+  padding: 14px 20px;
+  background: gold;
+  border-radius: 30px;
+  color: black;
+  font-weight: 600;
+  opacity: 0;
+  animation-delay: 100s;
+  animation: slideBottom 1s ease forwards;
+  box-shadow: 1px 1px 20px gold, 
+              1px 1px 40px yellow;
+}
+
+.contact-form form .send:hover{
+  box-shadow: 0 0 5px gold,
+    0   0   25px   gold, 0 0  50px gold,
+    0   0   100px   gold, 0 0   200px   gold
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
