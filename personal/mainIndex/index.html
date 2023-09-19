@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/44771c4e3e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
@@ -20,6 +20,7 @@
             <a href="#service" style="--i:3">Skill</a>
             <a href="#Skill" style="--i:4">Portfolio</a>
             <a href="#contact" style="--i:5">Contact</a>
+            <a href="/Personal_page/personal/myProduct/pageProject.html" style="--i:5">My project</a>
         </nav>
     </header>
     <section class="home" id="home">
@@ -39,12 +40,12 @@
                     <a href="#"><i class="fas fa-ghost" style="color: #d612d9; --i:12"></i></a>
                 </div>
             </div>
-            <img src="image/FB_IMG_1651990008347.jpg" />
+            <img src="../image/FB_IMG_1651990008347.jpg" />
         </div>
     </section>
     <section class="about" id="about">
         <div class="about_img">
-            <img src="image/FB_IMG_1666486154905.jpg">
+            <img src="../image/FB_IMG_1666486154905.jpg">
         </div>
         <div class="about_text">
             <h2>About <span>Me</span></h2> 
@@ -190,7 +191,7 @@
             <h2>Latest <span>Project</span></h2>
             <div class="portfolio-content">
                 <div class="row">
-                    <img src="/image/pexels-irina-iriser-1366957.jpg">
+                    <img src="../image/pexels-irina-iriser-1366957.jpg">
                     <div class="layer">
                         <h5>IMG1</h5>
                         <p>Meme được biết đến khá là phổ biến trong những năm gần đây. Là một trong những tính năng không thể thiếu trong hoạt động của các trang mạng xã hội. Vậy thì meme là gì? Meme là một phần của phương tiện truyền thông, thường là những hình ảnh hài hước và được lan truyền nhanh chóng thông quan mạng internet. Meme là một hình ảnh, video kèm theo tiêu đề hoặc là những âm thanh mang tính giải trí một cách hài hước, được truyền bá một cách rộng rãi trên các trang mạng xã hội</p>
@@ -198,7 +199,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <img src="/image/pexels-bess-hamiti-36487.jpg">
+                    <img src="../image/pexels-bess-hamiti-36487.jpg">
                     <div class="layer">
                         <h5>IMG2</h5>
                         <p>Meme được biết đến khá là phổ biến trong những năm gần đây. Là một trong những tính năng không thể thiếu trong hoạt động của các trang mạng xã hội. Vậy thì meme là gì? Meme là một phần của phương tiện truyền thông, thường là những hình ảnh hài hước và được lan truyền nhanh chóng thông quan mạng internet. Meme là một hình ảnh, video kèm theo tiêu đề hoặc là những âm thanh mang tính giải trí một cách hài hước, được truyền bá một cách rộng rãi trên các trang mạng xã hội</p>
@@ -206,7 +207,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <img src="/image/pexels-giorgio-de-angelis-1413412.jpg">
+                    <img src="../image/pexels-giorgio-de-angelis-1413412.jpg">
                     <div class="layer">
                         <h5>IMG3</h5>
                         <p>Meme được biết đến khá là phổ biến trong những năm gần đây. Là một trong những tính năng không thể thiếu trong hoạt động của các trang mạng xã hội. Vậy thì meme là gì? Meme là một phần của phương tiện truyền thông, thường là những hình ảnh hài hước và được lan truyền nhanh chóng thông quan mạng internet. Meme là một hình ảnh, video kèm theo tiêu đề hoặc là những âm thanh mang tính giải trí một cách hài hước, được truyền bá một cách rộng rãi trên các trang mạng xã hội</p>
@@ -234,12 +235,12 @@
             </div>
     </div>
     <div class="contact-form">
-        <form action="">
-            <input type="" placeholder="Enter Your Name" required>
-            <input type="email" placeholder="Enter Your Mail" required>
-            <input type="" placeholder="Enter Your Subject">
-            <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
-            <input type="submit" value="submit" class="send">
+        <form action="https://formspree.io/f/mgejyngl" method="POST">
+            <input type="text" name="name" id="IDname" placeholder="Enter Your Name" required>
+            <input type="email" name="mail" id="IDemail" placeholder="Enter Your Mail" required>
+            <input type="subject" name="subject" placeholder="Enter Your Subject">
+            <textarea name="message" id="IDmessage" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+            <input type="submit" id="submit" name="send" value="submit" class="send">
         </form>
     </div>
 
