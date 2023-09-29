@@ -1,6 +1,6 @@
 //open, close cart
 let openMyCart = document.querySelector('.shopping');
-let closeMyCart = document.querySelector('.CloseShopping');
+let closeMyCart = document.querySelector('.closeShopping');
 let body = document.querySelector('body');
 
 openMyCart.addEventListener('click',()=>{
@@ -10,23 +10,23 @@ closeMyCart.addEventListener('click',()=>{
     body.classList.remove('active');
 })
 
-// add to cart
-let list = document.querySelectorAll('.list .card');
+//Card working
+if (document.readyState=="loading"){
+    document.addEventListener("DOMContentLoaded",ready);
+} else{
+    ready()
+}
+// making function
+function ready(){
+    var removeCartButton = document.getElementsByClassName('bxs-trash-alt')
+    console.log(removeCartButton)
+    for (var i = 0; i<removeCartButton.length; i++){
+        var button = removeCartButton[i]
+        button.addEventListener('click', removeCartItem)
+    }
 
-list.forEach(card=> {
-    card.addEventListener('click', function(event){
-        if(event.target.classList.contains('bx-cart')){
-            var newItem= card.cloneNode(true)
-            
-            let listCart = document.querySelectorAll('.my_cart .card')
-            listCart.forEach(cart =>{
-                if(cart.getAttribute('data-key')==newItem.getAttribute('data-key')){
-                    alert('dd')
-                }
-            })
-
-
-            document.querySelector('.listCart').appendChild(newItem)
-        }
-    })
-})
+}
+function removeCartItem(event){
+    var buttonClicked = event.target;
+    buttonClicked.parentElement.remove();
+}

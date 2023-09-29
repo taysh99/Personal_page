@@ -190,7 +190,8 @@ body{
   background-color: burlywood;
   height: 100vh;
   transition: 0.5s;
-  display: none;
+  display:none;
+  overflow-y: auto;
 }
 .my_cart h1{
   text-align: center;
@@ -212,10 +213,84 @@ body{
   font-weight: bold;
   cursor: pointer;
 }
-.my_cart .checkout div:nth-child(2){
+.closeShopping{
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 .active .my_cart{
+  display: block;
+}
+.danger{
+  box-shadow: 0 10px 10px yellow;
+  transform: translate(0, -10px);
+}
+.cart_box{
+  display: grid;
+  grid-template-columns: 32%  50%   18%;
+  align-items: center;
+  gap:1rem;
+  margin-top: 1rem;
+  
+}
+.cart_img{
+  width: 90%;
+  object-fit: contain;
+  padding: 10px;
+}
+.detail_box{
+  display: grid;
+  row-gap: 0.5rem;
+}
+.cart_title{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.card_price{
+  font-weight: 500;
+}
+.cart_quantity{
+  border: 1px solid green;
+  outline-color: red;
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.bxs-trash-alt{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgb(71, 198, 230);
+}
+.total_title{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.total_price{
+  margin-left: 0.5rem ;
+}
+
+.btn-button{
+  display: flex;
+  margin: 1.5rem auto 1rem auto;
+  padding: 12px 20px;
+  font-weight:bold ;
+  background: linear-gradient(to right, green ,rgb(71, 198, 230));
+  cursor: pointer;
+}
+.btn-button:hover{
+  background: red;
+}
+.closeShopping{
+  position: absolute;
+  bottom: 0px;
+}
+.my_cart .active {
   display: block;
 }
