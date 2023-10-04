@@ -12,6 +12,10 @@ closeMyCart.addEventListener("click", () => {
   body.classList.remove("active");
 });
 
+
+
+// Xử lý sự kiện click
+
 //Card working
 if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", ready);
@@ -36,16 +40,32 @@ function ready() {
   for (var i = 0; i < addCart.length; i++) {
     var button = addCart[i];
     button.addEventListener("click", addCartClicked);
-    button.addEventListener("click", countProductBuy);
   }
   // buy button work
   document
     .getElementsByClassName("btn-button")[0]
     .addEventListener("click", buyButtonClicked);
-}
 
+    var myIcons = document.getElementsByClassName('bx-heart');
+
+    // Lặp qua từng biểu tượng và gắn sự kiện "click"
+    for (var i = 0; i < myIcons.length; i++) {
+        myIcons[i].addEventListener('click', changeIconColor);
+    }
+}
+function changeIconColor(event) {
+    // Lấy biểu tượng đã được click
+    var clickedIcon = event.target;
+
+    // Thêm hoặc xóa lớp 'clicked' để thay đổi màu
+    if (clickedIcon.classList.contains('clicked')) {
+        clickedIcon.classList.remove('clicked'); // Xóa lớp nếu đã được click trước đó
+    } else {
+        clickedIcon.classList.add('clicked'); // Thêm lớp nếu chưa được click trước đó
+    }
+}
 function buyButtonClicked() {
-  alert("your order is place");
+  alert("Đã mua hàng xong");
   var cartContent = document.getElementsByClassName("cart_content")[0];
   while (cartContent.hasChildNodes()) {
     cartContent.removeChild(cartContent.firstChild);
@@ -57,6 +77,7 @@ function removeCartItem(event) {
   var buttonClicked = event.target;
   buttonClicked.parentElement.remove();
   updatetotal();
+  calculateTotalQuantity() 
 }
 function quantityChanged(event) {
   var input = event.target;
@@ -64,6 +85,7 @@ function quantityChanged(event) {
     input.value = 1;
   }
   updatetotal();
+  calculateTotalQuantity() 
 }
 // ADd to cart
 function addCartClicked(event) {
@@ -74,12 +96,10 @@ function addCartClicked(event) {
   var productImg = shopProduct.getElementsByClassName("product_img")[0].src;
   addProductToCart(title, price, productImg);
   updatetotal();
+  calculateTotalQuantity() 
 }
 
-function countProductBuy(){
-    let cardBuy = document.getElementById('card-content-buy')
-    console.log(cardBuy)
-}
+
 
 function addProductToCart(title, price, product_img) {
   var cartShopBox = document.createElement("div");
@@ -89,11 +109,11 @@ function addProductToCart(title, price, product_img) {
   for (var i = 0; i < cartItemsName.length; i++) {
     console.log("gff", cartItemsName[i].innerText,title)
     if (cartItemsName[i].innerText == title) {
-      alert("done done");
+      alert("Sản phẩm đã được thêm");
       return;
     }
   }
-  var cartBoxContent = `
+  var cartBoxContent = `    
                             <img src="${product_img}" class="cart_img">
                             <div class="detail_box">
                                 <div class="cart_title">${title}</div>
@@ -124,6 +144,33 @@ function updatetotal() {
     var quantity = quantityElement.value;
     total = total + price * quantity;
   }
-
   document.getElementsByClassName("total_price")[0].innerText = "$" + total;
 }
+
+function calculateTotalQuantity() {
+    var quantityInputs = document.getElementsByClassName('cart_quantity');
+    var totalQuantity = 0;
+
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i];
+        var quantity = parseInt(input.value);
+
+        // Kiểm tra xem giá trị quantity có là một số hợp lệ không
+        if (!isNaN(quantity) && quantity > 0) {
+            totalQuantity += quantity;
+        }
+    }
+
+    // totalQuantity bây giờ chứa tổng số lượng hàng đã đặt
+    console.log("Tổng số lượng hàng đã đặt: " + totalQuantity);
+    var countElement = document.querySelector('.count');
+    if (countElement) {
+        countElement.innerText = totalQuantity;
+    }
+
+    return totalQuantity;
+}
+
+// Gọi hàm calculateTotalQuantity() để tính tổng số lượng hàng đã đặt
+
+// Get reference to the button

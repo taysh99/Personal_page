@@ -35,6 +35,9 @@ body{
 .card_heart:hover i{
   color: red;
 }
+.bx-heart.clicked {
+  color: red;
+}
 .card_cart:hover i{
   color: rgb(198, 230, 18);
 }
@@ -115,13 +118,38 @@ body{
   zoom: 50%;
   
 }
-.card:hover .card_title p, .card:hover .card_price p{
-  transform: translate(-45px,-55px) rotate(-360deg);
+.card:hover #product3{
+  transform: translateY(-150px) rotate(0deg) ;
+  zoom: 50%;
+  
+}
+.card:hover #product5{
+  transform: translateY(100px)  ;
+  zoom: 50%;
+  
+}
+#card_product3:hover .card_title p, #card_product3:hover .card_price p{
+  transform: translate(-45px,-100px) rotate(-360deg);
   color: gold;
   border: none;
   font-size: 40px;
   
 }
+#card_product4:hover .card_title p, #card_product4:hover .card_price p{
+  transform: translate(-45px,-100px) rotate(-360deg);
+  color: gold;
+  border: none;
+  font-size: 40px;
+  
+}
+.card:hover .card_title p, .card:hover .card_price p{
+  transform: translate(-45px,-45px) rotate(-360deg);
+  color: gold;
+  border: none;
+  font-size: 40px;
+  
+}
+
 .card_size{
   margin-top: 150px;
 }
@@ -139,6 +167,12 @@ body{
 }
 .card:hover .card_size{
   margin-top: -30px;
+}
+#card_product3:hover .card_size{
+  margin-top: -500px;
+}
+#card_product4:hover .card_size{
+  margin-top: -100px;
 }
 .card_action button:hover{
   transform: scale(0.9);
@@ -187,11 +221,12 @@ body{
   width: 300px;
   z-index: 200;
   right: 0px;
-  background-color: burlywood;
+  background-color: rgb(247, 200, 208);
   height: 100vh;
   transition: 0.5s;
   display:none;
   overflow-y: auto;
+  color:rgb(233, 0, 163);
 }
 .my_cart h1{
   text-align: center;
@@ -265,7 +300,7 @@ body{
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
-  border-top: 1px solid rgb(71, 198, 230);
+  border-top: 1px solid rgb(233, 0, 163);
 }
 .total_title{
   font-size: 1rem;
@@ -274,6 +309,10 @@ body{
 
 .total_price{
   margin-left: 0.5rem ;
+  color: gold;
+  font-weight: bold;
+  border-radius: 30%;
+  background-color: rgb(236, 17, 152);
 }
 
 .btn-button{
@@ -281,7 +320,7 @@ body{
   margin: 1.5rem auto 1rem auto;
   padding: 12px 20px;
   font-weight:bold ;
-  background: linear-gradient(to right, green ,rgb(71, 198, 230));
+  background: linear-gradient(to right, rgb(236, 4, 120) ,rgb(226, 19, 245));
   cursor: pointer;
 }
 .btn-button:hover{
@@ -289,8 +328,28 @@ body{
 }
 .closeShopping{
   position: absolute;
-  bottom: 0px;
+  top: 0px;
+  background: none;
+  color: rgb(245, 27, 216);
+  font-weight:bold;
+  text-decoration: underline;
 }
 .my_cart .active {
   display: block;
+}
+.list{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+#product4{
+  padding: 0px 20px;
+}
+#product3{
+  padding: 0px 20px;
+}
+.cart_box{
+  margin-top: 1.5rem;
+  border-top: 1px solid  rgb(245, 27, 216);
 }
